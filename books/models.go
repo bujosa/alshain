@@ -60,7 +60,7 @@ func PutBook(r *http.Request) (Book, error) {
 	}
 	bk.Price = float32(f64)
 
-	// insert values
+	// insert values of the collection
 	err = config.Books.Insert(bk)
 	if err != nil {
 		return bk, errors.New("500. Internal Server Error" + err.Error())
